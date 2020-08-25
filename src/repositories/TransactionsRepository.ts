@@ -25,29 +25,6 @@ class TransactionsRepository {
   }
 
   public getBalance(): Balance {
-    // const incomeTransactions = this.transactions.reduce((acc, cur) => {
-    //   const transactionType = 'income';
-    //   if (cur.type === transactionType) {
-    //     acc.push(cur);
-    //   }
-    //   return acc;
-    // }, []);
-
-    // const outcomeTransactions = this.transactions.reduce((acc, cur) => {
-    //   const transactionType = 'outcome';
-    //   if (cur.type === transactionType) {
-    //     acc.push(cur);
-    //   }
-    //   return acc;
-    // }, []);
-
-    // const totalIncome = incomeTransactions.reduce((acc, cur) => {
-    //   return acc + cur.value;
-    // }, 0);
-
-    // const totalOutcome = outcomeTransactions.reduce((acc, cur) => {
-    //   return acc + cur.value;
-    // }, 0);
     const { income, outcome } = this.transactions.reduce(
       (accumulator: Balance, transaction: Transaction) => {
         switch (transaction.type) {
